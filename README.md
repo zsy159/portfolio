@@ -130,6 +130,13 @@ portfolio/
 
 如果打开报 `ERR_SSL_VERSION_OR_CIPHER_MISMATCH`，不是你配错了，是这个域名在国内被拦，换回 EdgeOne 即可，文件完全一样。
 
+### 备用：GitHub Pages（当前线上地址）
+
+**https://zsy159.github.io/portfolio/**（仓库 `github.com/zsy159/portfolio`）
+
+- 上传：把 `index.html`、`.nojekyll`、`assets/` 传到仓库根目录 → **Settings → Pages** → Source 选 `Deploy from a branch`，分支 `main`、目录 `/(root)` → Save；
+- 更新：改完本地文件重新上传，或 `git push`，1 分钟内自动重建；
+- 注意：`github.io` 在国内时通时不通，微信里也可能提示风险，只适合过渡期用，长期还是备案 + 国内节点。
 ### 几个容易踩的坑
 
 - **zip 里 `index.html` 必须在最外层**，不能再套一层文件夹，否则首页 404、样式全丢。
