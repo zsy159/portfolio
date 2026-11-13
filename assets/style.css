@@ -336,6 +336,8 @@ body.is-locked { overflow: hidden; }
   margin: 0 0 30px;
   font-size: 11px;
   letter-spacing: .22em;
+  /* 字距会在末字后留一份空白，居中时整体左偏半份，用等量缩进补回来 */
+  text-indent: .22em;
   color: rgba(255, 255, 255, .78);
   text-shadow: 0 1px 12px rgba(6, 10, 16, .6);
 }
@@ -349,11 +351,15 @@ body.is-locked { overflow: hidden; }
   letter-spacing: -.015em;
 }
 
+/* 标题末尾的全角标点右侧是空的，会让整行视觉左偏；收掉半个字宽让墨迹居中 */
+.hero__title .punct { margin-right: -.5em; }
+
 .hero__sub {
   min-height: 1.9em;
   margin: 30px 0 0;
   font-size: clamp(12px, 1.15vw, 14px);
   letter-spacing: .26em;
+  text-indent: .26em;
   color: rgba(255, 255, 255, .86);
   text-shadow: 0 1px 14px rgba(6, 10, 16, .55);
 }
@@ -391,15 +397,15 @@ body.is-locked { overflow: hidden; }
   animation: bob 1.9s var(--ease) infinite;
 }
 
-/* 窄屏：插画被裁成竖条，顶部天空更亮，需要更强的上沿压暗 */
+/* 窄屏：插画被裁成竖条，标题正好压在亮湖面上，需要更强的中间压暗 */
 @media (max-width: 640px) {
-  .hero__media { background-position: 50% 42%, center, center; }
+  .hero__media { background-position: 50% 46%, center, center; }
   .hero__veil {
     background:
-      radial-gradient(78% 30% at 50% 60%, rgba(8, 12, 18, .62) 0%, rgba(8, 12, 18, .24) 62%, rgba(8, 12, 18, 0) 86%),
-      linear-gradient(180deg, rgba(10, 15, 22, .64) 0%, rgba(10, 15, 22, .22) 30%, rgba(10, 15, 22, .16) 60%, rgba(10, 15, 22, .84) 100%);
+      radial-gradient(92% 34% at 50% 48%, rgba(8, 12, 18, .62) 0%, rgba(8, 12, 18, .26) 60%, rgba(8, 12, 18, 0) 88%),
+      linear-gradient(180deg, rgba(10, 15, 22, .6) 0%, rgba(10, 15, 22, .14) 28%, rgba(10, 15, 22, .2) 58%, rgba(10, 15, 22, .86) 100%);
   }
-  .hero__inner { top: 1vh; }
+  .hero__inner { top: -2vh; }
 }
 
 /* ============ 通用版块 ============ */
@@ -635,35 +641,64 @@ body.is-locked { overflow: hidden; }
 
 .about {
   display: grid;
-  grid-template-columns: 1.12fr .88fr;
-  gap: clamp(32px, 5vw, 72px);
-}
-
-@media (max-width: 820px) {
-  .about { grid-template-columns: minmax(0, 1fr); }
+  grid-template-columns: 1.15fr .85fr;
+  gap: clamp(36px, 5vw, 76px);
+  align-items: start;
 }
 
 .about__text p {
-  margin: 18px 0 0;
+  margin: 16px 0 0;
   color: var(--ink-2);
-  line-height: 2;
+  font-size: 15.5px;
+  line-height: 1.9;
+  text-align: justify;
+  text-justify: inter-ideograph;
 }
 
-.facts { margin: 6px 0 0; }
-.facts > div + div { margin-top: 22px; }
+/* 事实清单：一条一行，细线分隔，标签与内容同一基线 */
+.facts { margin: 4px 0 0; }
+
+@media (min-width: 821px) {
+  /* 桌面端把清单压到与「关于」标题同高，别悬在顶部 */
+  .facts { margin-top: 32px; }
+}
+
+.facts > div {
+  display: grid;
+  grid-template-columns: 76px minmax(0, 1fr);
+  gap: 16px;
+  align-items: baseline;
+  padding: 15px 0;
+  border-top: 1px solid var(--line);
+}
+.facts > div:first-child { padding-top: 0; border-top: 0; }
 
 .facts dt {
-  margin-bottom: 5px;
   font-size: 10px;
-  letter-spacing: .3em;
+  letter-spacing: .18em;
+  line-height: 1.7;
   color: var(--muted);
+  white-space: nowrap;
 }
 
 .facts dd {
   margin: 0;
   font-size: 13.5px;
-  line-height: 1.85;
+  line-height: 1.7;
   color: var(--ink-2);
+}
+
+@media (max-width: 820px) {
+  .about {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 30px;
+  }
+  .about__text p { font-size: 15px; line-height: 1.85; }
+  .facts > div {
+    grid-template-columns: 64px minmax(0, 1fr);
+    gap: 12px;
+    padding: 13px 0;
+  }
 }
 
 /* ============ 联系 ============ */

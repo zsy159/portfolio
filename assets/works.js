@@ -31,8 +31,7 @@ window.WORKS = [
     year: "2026",
     duration: "04:47",
     cover: "assets/thumbs/jiexiang-yanhuo.jpg",
-    url: "https://www.codapan.com/s/ROgIFYAiosEC?embed=1&layout=full",
-    note: "新采 3、4 班小组作品"
+    url: "https://www.codapan.com/s/ROgIFYAiosEC?embed=1&layout=full"
   },
   {
     title: "零食测评",
