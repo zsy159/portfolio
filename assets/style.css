@@ -351,8 +351,8 @@ body.is-locked { overflow: hidden; }
   letter-spacing: -.015em;
 }
 
-/* 标题末尾的全角标点右侧是空的，会让整行视觉左偏；收掉半个字宽让墨迹居中 */
-.hero__title .punct { margin-right: -.5em; }
+/* 标题末尾的全角标点右侧是空的，会让整行视觉左偏；让标点悬挂到行外，字形本身保持居中 */
+.hero__title .punct { margin-right: -1em; }
 
 .hero__sub {
   min-height: 1.9em;
