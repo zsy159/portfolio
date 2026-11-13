@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>李若冰 · 影像作品集</title>
+<meta name="description" content="李若冰的求职作品集：新闻采编专业，能独立完成采访、拍摄与剪辑。纪录、剧情、实验短片，点击封面即可播放。" />
+<meta name="theme-color" content="#1b2a36" />
+<link rel="stylesheet" href="assets/style.css" />
+<!-- codapan 播放器脚本：全站只引一次，弹层里按需创建 iframe -->
+<script src="https://www.codapan.com/statics/js/coda-embed.js?v=20260911embedSync1" defer></script>
+</head>
+<body>
+
+<!-- ============ 左侧竖栏（桌面端） ============ -->
+<aside class="rail" aria-label="主导航">
+  <a class="rail__brand" href="#top">
+    <span class="rail__mark">影</span>
+    <span class="rail__text">李若冰 · 影像</span>
+  </a>
+  <nav class="rail__nav">
+    <a class="rail__link" href="#works"><em>01</em><span>作品</span></a>
+    <a class="rail__link" href="#about"><em>02</em><span>关于</span></a>
+    <a class="rail__link" href="#contact"><em>03</em><span>联系</span></a>
+  </nav>
+  <div class="rail__foot">
+    <button class="rail__link rail__link--btn" id="toTop" type="button"><em>↑</em><span>回到顶部</span></button>
+  </div>
+</aside>
+
+<!-- ============ 移动端菜单 ============ -->
+<button class="menu-btn" id="menuBtn" type="button" aria-label="打开菜单" aria-controls="drawer" aria-expanded="false">
+  <span></span><span></span>
+</button>
+
+<div class="drawer" id="drawer" hidden>
+  <button class="drawer__close" id="drawerClose" type="button" aria-label="关闭菜单">✕</button>
+  <div class="drawer__head">
+    <span class="rail__mark">影</span>
+    <span>李若冰 · 影像</span>
+  </div>
+  <nav class="drawer__nav">
+    <a href="#works"><em>01</em>作品</a>
+    <a href="#about"><em>02</em>关于</a>
+    <a href="#contact"><em>03</em>联系</a>
+  </nav>
+  <p class="drawer__foot">© 2026 李若冰 · 影像作品集</p>
+</div>
+
+<!-- ============ 首屏 ============ -->
+<header class="hero" id="top">
+  <div class="hero__media" aria-hidden="true"></div>
+  <div class="hero__veil" aria-hidden="true"></div>
+  <div class="hero__inner">
+    <p class="hero__kicker">求职作品集 · 2026</p>
+    <h1 class="hero__title">把作业，<br />拍成作品。</h1>
+    <p class="hero__sub"><span id="typer"></span><span class="hero__caret" aria-hidden="true"></span></p>
+  </div>
+  <a class="hero__scroll" href="#works">
+    <span>向下</span>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true">
+      <path d="M12 4v15M6 13l6 6 6-6" />
+    </svg>
+  </a>
+</header>
+
+<main>
+  <!-- ============ 作品 ============ -->
+  <section class="section" id="works">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <p class="label">SELECTED WORKS</p>
+          <h2 class="sec-title">作品选</h2>
+        </div>
+        <p class="sec-note">点击封面播放 · 视频托管于 codapan</p>
+      </div>
+
+      <div class="filters" id="filters" role="tablist" aria-label="作品分类"></div>
+      <div class="grid" id="grid"></div>
+    </div>
+  </section>
+
+  <!-- ============ 关于 ============ -->
+  <section class="section section--about" id="about">
+    <div class="wrap about">
+      <div class="about__text reveal">
+        <p class="label">ABOUT</p>
+        <h2 class="sec-title">关于</h2>
+        <p>新闻采编专业。一条片子从选题、采访、拍摄到剪辑可以独立走完：会先写分镜再开机，也敢在采访现场临时改提纲，习惯在剪辑台上推翻分镜。相信短片的力量在于克制——少一个镜头，往往比多一个更准。</p>
+        <p>目前正在找工作，方向是内容制作 / 新媒体 / 影视后期，可随时到岗。</p>
+      </div>
+      <dl class="facts reveal">
+        <div>
+          <dt>设备</dt>
+          <dd>Sony A7M4 · 24-70mm F2.8 · 罗德 Wireless GO II</dd>
+        </div>
+        <div>
+          <dt>后期</dt>
+          <dd>Premiere Pro · DaVinci Resolve · 剪映 · Audition</dd>
+        </div>
+        <div>
+          <dt>求职方向</dt>
+          <dd>内容制作 · 新媒体运营 · 影视后期 · 短视频编导</dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- ============ 联系 ============ -->
+  <section class="section section--contact" id="contact">
+    <div class="wrap reveal">
+      <p class="label">CONTACT</p>
+      <h2 class="sec-title">有合适的岗位？<a href="mailto:2086339085@qq.com">聊聊。</a></h2>
+      <p class="contact__mail"><a href="mailto:2086339085@qq.com">2086339085@qq.com</a></p>
+      <p class="contact__meta">微信 irrr00625 · 坐标 武汉 · 求职中，可随时到岗</p>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot__inner">
+    <p>© <span id="year">2026</span> 李若冰 · 影像作品集</p>
+    <a href="#top">回到顶部 ↑</a>
+  </div>
+</footer>
+
+<!-- ============ 播放弹层 ============ -->
+<div class="modal" id="modal" hidden>
+  <div class="modal__panel" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal__bar">
+      <p class="modal__title" id="modalTitle"></p>
+      <div class="modal__acts">
+        <a class="modal__open" id="modalOpen" href="#" target="_blank" rel="noopener">新窗口打开 ↗</a>
+        <button class="modal__close" id="modalClose" type="button">关闭 ✕</button>
+      </div>
+    </div>
+    <div class="modal__stage" id="stage"></div>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="assets/works.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>
